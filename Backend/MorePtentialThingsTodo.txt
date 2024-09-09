@@ -1,0 +1,11 @@
+things to concider implementing in web blog:
+- comments 
+- user (or verification per blog entrie access password)
+- getting back to right blog after detail view (blog.html?id=1 => listblog.html#blog_1)
+- improvements 
+- darkmode
+- more features...
+- favorite blog 
+- own blogs
+- views
+documentation (in c# or and README file)

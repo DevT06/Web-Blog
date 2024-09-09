@@ -1,0 +1,68 @@
+@WebBlogAPI_HostAddress = http://localhost:5199
+
+GET {{WebBlogAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{WebBlogAPI_HostAddress}}/api/blog/list
+Accept: application/json
+
+###
+
+GET {{WebBlogAPI_HostAddress}}/api/blog/74
+Accept: application/json
+
+###
+
+GET {{WebBlogAPI_HostAddress}}/api/blog/list?categoryId=&searchTerm=
+Accept: application/json
+
+###
+
+GET {{WebBlogAPI_HostAddress}}/api/blog/list?categoryId=0
+Accept: application/json
+
+###
+GET {{WebBlogAPI_HostAddress}}/api/blog/list?title=title
+Accept: application/json
+
+###
+
+Post {{WebBlogAPI_HostAddress}}/api/blog/create/
+Content-Type: application/json
+Accept: application/json
+{
+    "title": "title",
+    "text": "text",
+    "author": "author1",
+    "lastChangedAt": "2024-08-21T12:00:00",
+    "categoryId": 3
+}
+
+### 
+PUT {{WebBlogAPI_HostAddress}}/api/blog/update/74
+Content-Type: application/json
+Accept: application/json
+{
+    "title": "new Title",
+    "text": "",
+    "author": "",
+    "lastChangedAt": "2024-09-03T09:25:00",
+    "categoryId": 2
+}
+
+###
+
+DELETE {{WebBlogAPI_HostAddress}}/api/blog/delete/57
+Accept: application/json
+
+###
+
+GET {{WebBlogAPI_HostAddress}}/api/category/all
+Accept: application/json
+
+###
+
+GET {{WebBlogAPI_HostAddress}}/api/category/1
+Accept: application/json
