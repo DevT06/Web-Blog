@@ -1,6 +1,7 @@
 # Web-Blog
-## This is a simple web based blogging plattform
+## Abstract
+### This is a simple web based blogging plattform.
+###
+- This Web-Blog application was developed to improve my own skills.
 
-### This Web-Blog application was developed to improve my own skills.
-
-### This Project is not currently in development
+- This Project is not currently in development
