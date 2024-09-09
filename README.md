@@ -1,7 +1,15 @@
 # Web-Blog
-## Abstract
-### This is a simple web based blogging plattform.
 ###
-- This Web-Blog application was developed to improve my own skills.
+## Abstract
+This is a simple web based blogging plattform.
 
-- This Project is not currently in development
+## Info
+- This Web-Blog application was developed to improve my own skills.
+- This Project is currently not in development.
+
+## Technologies used:
+
+- Bootstrap
+- JQuery
+- ASP.NET
+- Entity Framework
