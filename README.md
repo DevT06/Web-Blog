@@ -8,7 +8,7 @@ This is a simple web based blogging plattform.
 - This Web-Blog application was developed to improve my own skills.
 - This Project is currently not in development.
 
-## Technologies used:
+## Technologies used
 
 - Bootstrap
 - JQuery
