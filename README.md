@@ -1,7 +1,7 @@
 # Web-Blog
 ###
 
-## Abstract
+## About
 This is a simple web based blogging plattform.
 
 ## Info
@@ -9,7 +9,6 @@ This is a simple web based blogging plattform.
 - This Project is currently not in development.
 
 ## Technologies used
-
 - Bootstrap
 - JQuery
 - ASP.NET
