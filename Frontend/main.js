@@ -306,7 +306,7 @@ async function loadBlogData() {
         tableContent.append(`<tr style="height: 85px; " class="" id="blog_${blog.id}"> <!--<td>${blog.id}</td>--> <td class="fs-5">${blog.title}</td> <td class="fs-5">${blog.author}</td> <td class="fs-5">${blog.category.name}</td> <td class="fs-5">${blog.createdAt.replace("T", " ").slice(0, 16)/*.replaceAll("-", ".")*/}</td> <td class="fs-5">${blog.editedAt !== null ? blog.editedAt.replace("T", " ").slice(0, 16) : ""}</td> <td><button onclick="deleteBlog(${blog.id})" class="btn btn-danger"><i class="bi bi-trash"></i></button></td> <td><button onclick="detailViewBlog(${blog.id})" class="btn btn-primary">Detail <i class="bi bi-arrow-right-circle"></i>
 </button></td> </tr>`)
     });
-
+    // Add functionality to navigate to the blog from which you came from (detail page)
 }
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
