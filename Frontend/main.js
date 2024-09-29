@@ -17,25 +17,25 @@ let quillEditor;
 
 const toolbarOptions = [
     [{ 'header': [1, 2, 3, 4, 5, false] }],
-    [{ 'size': ['huge','large', false, 'small' ] }],  // custom dropdown
+    [{ 'size': ['huge', 'large', false, 'small'] }],  // custom dropdown
 
     ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
     ['blockquote', 'code-block'],
     ['link', 'image', /*'video',*/ 'formula'],
-  
+
     [{ 'header': 1 }, { 'header': 2 }],               // custom button values
-    [{ 'list': 'ordered'}, { 'list': 'bullet' }, { 'list': 'check' }],
+    [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'list': 'check' }],
     //[{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
     //[{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
     [{ 'direction': 'rtl' }],                         // text direction //remove later
-  
-  
+
+
     [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
     //[{ 'font': [] }],
     [{ 'align': [] }],
-  
+
     ['clean']                                         // remove formatting button
-  ];
+];
 
 async function loadCategoryData() {
     let categories = await getAllCategories();
@@ -127,11 +127,11 @@ async function loadDetailSite() {
 
 function loadCreatePage() {
     loadCategoryData();
-    
+
     const quill = new Quill('#editor', {
         modules: {
             toolbar: toolbarOptions
-          },
+        },
         theme: 'snow'
     });
     quillEditor = quill;
@@ -175,7 +175,7 @@ async function loadBlogEditPage() {
     const quill = new Quill('#editor', {
         modules: {
             toolbar: toolbarOptions
-          },
+        },
         theme: 'snow'
     });
     quillEditor = quill;
@@ -224,7 +224,7 @@ async function updateBlog() {
     }
 }
 
-$("form").submit(function() { return false; });
+$("form").submit(function () { return false; });
 
 async function goBackMain() {
     window.location.href = `./listBlog.html`
@@ -232,10 +232,11 @@ async function goBackMain() {
 
 }
 
-async function goBackMainSpecificBlog(blogId) {
-    window.location.href = `./listBlog.html`
+async function goBackMainSpecificBlog() {
+    let url = location.href;
+    let blogId = url.split("=")[1];
+    window.location.href = `./listBlog.html#b${blogId}`
     loadPageData();
-    // Todo Add functionality to navigate to the blog from which you came from (detail page)
 }
 
 
@@ -271,7 +272,7 @@ async function createBlog() {
         }
 
         let blog = await createNewBlog(newBlog);
-        
+
         detailViewBlog(blog.id);
     }
 }
@@ -303,10 +304,26 @@ async function loadBlogData() {
     tableContent.empty();
 
     blogs.forEach(blog => {
-        tableContent.append(`<tr style="height: 85px; " class="" id="blog_${blog.id}"> <!--<td>${blog.id}</td>--> <td class="fs-5">${blog.title}</td> <td class="fs-5">${blog.author}</td> <td class="fs-5">${blog.category.name}</td> <td class="fs-5">${blog.createdAt.replace("T", " ").slice(0, 16)/*.replaceAll("-", ".")*/}</td> <td class="fs-5">${blog.editedAt !== null ? blog.editedAt.replace("T", " ").slice(0, 16) : ""}</td> <td><button onclick="deleteBlog(${blog.id})" class="btn btn-danger"><i class="bi bi-trash"></i></button></td> <td><button onclick="detailViewBlog(${blog.id})" class="btn btn-primary">Detail <i class="bi bi-arrow-right-circle"></i>
+        tableContent.append(`<tr style="height: 85px; " class="" id="b${blog.id}"> <!--<td>${blog.id}</td>--> <td class="fs-5">${blog.title}</td> <td class="fs-5">${blog.author}</td> <td class="fs-5">${blog.category.name}</td> <td class="fs-5">${blog.createdAt.replace("T", " ").slice(0, 16)/*.replaceAll("-", ".")*/}</td> <td class="fs-5">${blog.editedAt !== null ? blog.editedAt.replace("T", " ").slice(0, 16) : ""}</td> <td><button onclick="deleteBlog(${blog.id})" class="btn btn-danger"><i class="bi bi-trash"></i></button></td> <td><button onclick="detailViewBlog(${blog.id})" class="btn btn-primary">Detail <i class="bi bi-arrow-right-circle"></i>
 </button></td> </tr>`)
     });
-    // Todo Add functionality to navigate to the blog from which you came from (detail page)
+
+    let url = location.href;
+    let blogId = url.split("#")[1];
+    scrollToElementWithMargin(blogId, 70)
+}
+
+function scrollToElementWithMargin(elementId, margin) {
+    const element = document.getElementById(elementId);
+    if (element) {
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - margin;
+
+        window.scrollTo({
+            top: offsetPosition,
+            // behavior: 'smooth'
+        });
+    }
 }
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
