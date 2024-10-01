@@ -326,6 +326,8 @@ function scrollToElementWithMargin(elementId, margin) {
     }
 }
 
+// Asjust Url so the #b1 (example) is removed
+
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (() => {
     'use strict'
