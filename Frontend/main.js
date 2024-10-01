@@ -321,7 +321,7 @@ function scrollToElementWithMargin(elementId, margin) {
 
         window.scrollTo({
             top: offsetPosition,
-            // behavior: 'smooth'
+            behavior: 'instant'
         });
     }
 }
