@@ -49,6 +49,8 @@ async function loadCategoryData() {
 }
 
 async function searchBlog() {
+    window.location.href = "./listBlog.html#"
+
     let searchField = $(`#searchField`);
     searchTerm = searchField.val();
     loadBlogData();
