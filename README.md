@@ -13,6 +13,6 @@ This is a simple web based blogging plattform.
 - [JQuery](https://jquery.com/)
 - [ASP.Net Core](https://dotnet.microsoft.com/en-us/apps/aspnet)
 - [Entity Framework Core](https://learn.microsoft.com/de-de/ef/core/) (Version: 9)
-- [Microsoft SQL Server](https://learn.microsoft.com/en-us/sql/?view=sql-server-ver16)
+- [Microsoft SQL Server 2022](https://learn.microsoft.com/en-us/sql/?view=sql-server-ver16)
 
 ## .NET Version: 8.0
