@@ -75,7 +75,7 @@ async function loadPageData() {
 async function deleteBlog(blogId/*, blogTitle*/) {
     if (confirm(`Delete this Blog? Id: ${blogId} `)) {
         deleteBlogById(blogId)
-        let removedEntry = $(`#blog_${blogId}`);
+        let removedEntry = $(`#b${blogId}`);
         removedEntry.detach();
     };
 }
