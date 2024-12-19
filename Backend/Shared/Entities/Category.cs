@@ -10,7 +10,7 @@ public class Category
 
     public string Description { get; set; }
 
-    public int ImageId { get; set; }    
+    public int? ImageId { get; set; }    
 
 
     #region Navigation Properties
