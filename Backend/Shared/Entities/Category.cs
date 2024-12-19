@@ -8,6 +8,11 @@ public class Category
 
     public string Name { get; set; }
 
+    public string Description { get; set; }
+
+    public int ImageId { get; set; }    
+
+
     #region Navigation Properties
 
     public ICollection<Blog> Blogs { get; set; }
