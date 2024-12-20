@@ -27,7 +27,7 @@ public class WebBlogDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
-        options.UseSqlServer(_configuration.GetConnectionString("Default"))
+        options.UseSqlServer(_configuration.GetConnectionString("AWSBlogDb"))
             .EnableDetailedErrors();
     }
 }
