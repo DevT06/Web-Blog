@@ -23,4 +23,8 @@ public class CategoryRepository : ICategoryRepository
         return _context.CategoryEntries.ToList();
     }
 
+    public async Task<Category?> GetByIdAsync(CategoryEnum id)
+	{
+		return await _context.CategoryEntries.FindAsync(id);
+	}
 }

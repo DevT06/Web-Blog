@@ -66,3 +66,9 @@ Accept: application/json
 
 GET {{WebBlogAPI_HostAddress}}/api/category/1
 Accept: application/json
+
+
+###
+
+GET {{WebBlogAPI_HostAddress}}/api/category/detail/1
+Accept: application/json

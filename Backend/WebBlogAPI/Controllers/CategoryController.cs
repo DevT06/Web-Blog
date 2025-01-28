@@ -42,5 +42,16 @@ namespace WebBlogAPI.Controllers
 
             return Ok(foundCategory);
         }
-    }
+
+        [HttpGet("detail/{id}")]
+		public async Task<IActionResult> GetCategory(int id)
+        {
+	        var categoryDto = await _categoryService.GetByIdAsync(id);
+	        if (categoryDto == null)
+	        {
+		        return NotFound();
+	        }
+	        return Ok(categoryDto);
+        }
+}
 }

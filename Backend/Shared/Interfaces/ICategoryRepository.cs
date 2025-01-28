@@ -8,4 +8,6 @@ public interface ICategoryRepository
     Category? GetById(CategoryEnum id);
 
     List<Category> GetAll();
+
+    Task<Category?> GetByIdAsync(CategoryEnum id);
 }
