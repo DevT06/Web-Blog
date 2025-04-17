@@ -222,7 +222,7 @@ async function updateBlog() {
 
         await updateNewBlog(blogId, newBlog);
 
-        window.location.replace(`/blog.html?id=${blogId}`)
+        window.location.replace(`./blog.html?id=${blogId}`)
     }
 }
 
